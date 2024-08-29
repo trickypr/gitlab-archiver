@@ -1,3 +1,12 @@
+{ pkgs, lib, config, inputs, ... }:
+
+{
+  packages = [ pkgs.git ];
+
+  languages.python = {
+    enable = true;
+    venv.enable = true;
+    venv.requirements = ''
 certifi==2024.2.2
 charset-normalizer==3.3.2
 gitdb==4.0.11
@@ -14,3 +23,6 @@ six==1.16.0
 smmap==5.0.1
 urllib3==2.2.1
 wcwidth==0.2.13
+    '';
+  }; 
+}
